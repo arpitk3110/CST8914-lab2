@@ -2,21 +2,31 @@
 <html lang="en">
 
 <head>
-    <title>Question 4 - JavaScript</title>
-
+  <title>Question 4 - JavaScript</title>
 </head>
 
 <body>
-    <h1>HTML DOM Events</h1>
-    <p>Trigger a function on hover that will output "Hello World":</p>
+  <h1>HTML DOM Events</h1>
+  <p>Trigger a function by hovering with a mouse <strong>or</strong> using the keyboard:</p>
 
-    <button onmouseover="myFunction()">Action!</button>
-    <p id="demo"></p>
-</body>
-<script>
-    function myFunction() {
-        document.getElementById("demo").innerHTML = "Hello World";
+  
+  <button id="actionBtn">Action!</button>
+  <p id="demo"></p>
+
+  <script>
+    function showMessage() {
+      document.getElementById("demo").innerHTML = "Hello World";
     }
-</script>
+
+    const button = document.getElementById("actionBtn");
+
+    
+    button.addEventListener("mouseover", showMessage);
+
+    
+    button.addEventListener("focus", showMessage);
+    button.addEventListener("click", showMessage);
+  </script>
+</body>
 
 </html>
